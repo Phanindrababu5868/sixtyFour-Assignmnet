@@ -32,7 +32,7 @@ const Data: LibraryCardProps[] = [
   },
 ];
 
-const Cards = () => {
+const LibratyCards = () => {
   return (
     <Stack
       direction={"row"}
@@ -53,4 +53,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default LibratyCards;

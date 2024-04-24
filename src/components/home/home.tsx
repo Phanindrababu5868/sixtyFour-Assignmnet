@@ -12,7 +12,7 @@ const Home = () => {
       <Sidebar />
       <Stack flexGrow={1} overflow={"auto"}>
         <Navbar />
-        <Cards />
+        {/* <Cards /> */}
         <Stack p={2} direction={"row"} justifyContent={"space-between"} gap={4}>
           <Blogs />
           <RecentRelease />

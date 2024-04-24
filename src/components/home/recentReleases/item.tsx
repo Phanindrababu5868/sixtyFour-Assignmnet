@@ -6,6 +6,7 @@ const Item: React.FC<RecentReleaseDataProps> = ({
   date,
   title,
   description,
+  country,
 }) => {
   return (
     <Stack gap={2} direction={"row"}>
