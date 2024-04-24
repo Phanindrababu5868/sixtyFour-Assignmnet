@@ -46,7 +46,7 @@ const Navbar = () => {
             Good Afternoon, Akshay
           </Typography>
           <Typography sx={{ fontSize: "12px", color: "gray" }}>
-            You're subscribed to Retail plan
+            Youre subscribed to Retail plan
           </Typography>
         </Stack>
 
