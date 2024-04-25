@@ -1,11 +1,20 @@
+"use client";
 import { IconButton, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 const Navbar = () => {
-  const currentDate = new Date();
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000); // Update every minute (60 seconds * 1000 milliseconds)
+
+    return () => clearInterval(intervalId); // Cleanup function to clear interval on unmount
+  }, []);
 
   const months = [
     "January",
@@ -22,11 +31,11 @@ const Navbar = () => {
     "December",
   ];
 
-  const formattedDate = `${currentDate.getDate()} ${
-    months[currentDate.getMonth()]
+  const formattedDate = `${currentTime.getDate()} ${
+    months[currentTime.getMonth()]
   }`;
 
-  const formattedTime = `${currentDate.getHours()}:${currentDate
+  const formattedTime = `${currentTime.getHours()}:${currentTime
     .getMinutes()
     .toString()
     .padStart(2, "0")}`;
@@ -62,7 +71,7 @@ const Navbar = () => {
             <Stack direction={"row"} spacing={1}>
               <AccessTimeIcon sx={{ color: "white" }} />
               <Typography sx={{ fontSize: "18px", color: "white" }}>
-                Today, {formattedTime}
+                {formattedTime}
               </Typography>
             </Stack>
           </Stack>
